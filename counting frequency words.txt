@@ -1,0 +1,43 @@
+using System;
+using System.Text;
+
+namespace ConsoleApp16
+{
+    class program
+    {
+        static void Main(string[] args)
+        {
+            string str = "this .net class ttrainee which a best sesion for .net core tech";
+            var strchar = str.ToCharArray();
+            char[] existchar = new char[strchar.Length];
+            int x = 0;
+            for (int i = 0; i < strchar.Length; i++)
+            {
+                if (countchar(existchar, strchar[i]) == 0)
+                {
+                    int count = countchar(strchar, strchar[i]);
+                    Console.WriteLine($"{ strchar[i]}={ count}");
+                }
+
+              existchar[x] = strchar[i];
+                x++;
+            }
+        }
+        public static int countchar(char[] chrr,char ch)
+        {
+            int count = 0;
+            for(int i=0;i<chrr.Length;i++)
+            {
+                if(chrr[i]==ch)
+                {
+                    count++;
+
+                }
+            }
+            return count;
+        }
+            
+    }
+}
+
+   
